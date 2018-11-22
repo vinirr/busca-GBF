@@ -42,7 +42,6 @@ $pontoP = ['cidade' => 'P', 'x' => 12, 'y' => 5, 'expansoes' => ['N', 'S']];
 $pontoQ = ['cidade' => 'Q', 'x' => 11, 'y' => 7, 'expansoes' => ['P']];
 $pontoS = ['cidade' => 'S', 'x' => 13, 'y' => 2, 'expansoes' => []];
 
-
 $todosPontos = [$pontoA,$pontoB,$pontoC,$pontoD,$pontoF,$pontoG,$pontoH,$pontoM,$pontoN,$pontoP,$pontoQ,$pontoS];
 $pontoOrigem = $pontoA;
 $pontoDestino = $pontoS;
@@ -50,8 +49,8 @@ $pontoDestino = $pontoS;
 $fronteira = [];
 $explorados = [];
 
+// Difinindo a fronteira inicial
 $fronteira[$pontoOrigem['cidade']] = calculaHeuristica($pontoOrigem['x'], $pontoDestino['x'], $pontoOrigem['y'], $pontoDestino['y']);
-
 
 // Percorre enquanto a cabeça for diferente do objetivo
 while (($cidadeCabeca = explode(',', array_keys($fronteira)[0])[0]) != $pontoDestino['cidade']) {
@@ -59,9 +58,7 @@ while (($cidadeCabeca = explode(',', array_keys($fronteira)[0])[0]) != $pontoDes
     // Exibindo fronteira atual
     imprimirFronteira($fronteira);
     
-    
     // Pegando dados do primeiro da fronteira
-    
     $dadosCidadeCabeca = getDadosCidade($todosPontos, $cidadeCabeca);
     
     reset($fronteira);
@@ -69,11 +66,8 @@ while (($cidadeCabeca = explode(',', array_keys($fronteira)[0])[0]) != $pontoDes
     // Adicionando os caminhos expandidos na fronteira
     foreach($dadosCidadeCabeca['expansoes'] as $pontoExpansao){
         $dadosPontoExpansao = getDadosCidade($todosPontos, $pontoExpansao);
-        
         $heuristicaPontoExpansao = calculaHeuristica($dadosPontoExpansao['x'], $pontoDestino['x'], $dadosPontoExpansao['y'], $pontoDestino['y']);
-
         $caminho = $pontoExpansao . "," . key($fronteira);
-
         $fronteira[$caminho] = $heuristicaPontoExpansao;
     }
     
@@ -87,7 +81,6 @@ while (($cidadeCabeca = explode(',', array_keys($fronteira)[0])[0]) != $pontoDes
         }
         return ($a < $b) ? -1 : 1;
     });
-    
     
     imprimirExplorados($explorados);
     
