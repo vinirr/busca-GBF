@@ -33,7 +33,7 @@ $pontoA = ['cidade' => 'A', 'x' => 2, 'y' => 4, 'expansoes' => ['B']];
 $pontoB = ['cidade' => 'B', 'x' => 5, 'y' => 6, 'expansoes' => ['M', 'C']];
 $pontoC = ['cidade' => 'C', 'x' => 4, 'y' => 2, 'expansoes' => ['D']];
 $pontoD = ['cidade' => 'D', 'x' => 7, 'y' => 4, 'expansoes' => ['G', 'N', 'Q']];
-$pontoF = ['cidade' => 'F', 'x' => 7, 'y' => 8, 'expansoes' => ['Q'];
+$pontoF = ['cidade' => 'F', 'x' => 7, 'y' => 8, 'expansoes' => ['Q']];
 $pontoG = ['cidade' => 'G', 'x' => 8, 'y' => 2, 'expansoes' => []];
 $pontoH = ['cidade' => 'H', 'x' => 10, 'y' => 1, 'expansoes' => ['G']];
 $pontoM = ['cidade' => 'M', 'x' => 9, 'y' => 6, 'expansoes' => ['F']];
