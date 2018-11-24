@@ -1,3 +1,5 @@
+<h1>Algoritmo GBF</h1>
+
 <?php
 
 function calculaHeuristica($x1, $x2, $y1, $y2) {
@@ -92,5 +94,7 @@ while (($cidadeCabeca = explode(',', array_keys($fronteira)[0])[0]) != $pontoDes
 // Exibindo fronteira e explorados final
 imprimirFronteira($fronteira);
 imprimirExplorados($explorados);
+
+echo "<b>Caminho encontrado: " . key($fronteira) . "</b>";
 
 ?>
